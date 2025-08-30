@@ -111,7 +111,7 @@ Variables are like containers that store information for later use.
 #!/bin/bash
 
 # Creating variables (no spaces around =)
-name="Johnoe"
+name="Abdul"
 age=25
 today=$(date)
 
@@ -301,10 +301,10 @@ validate_email() {
 }
 
 # Using functions
-greet "Alice"
+greet "Abdul"
 sum=$(calculate_sum 10 20)
 echo "Sum: $sum"
-validate_email "user@example.com"
+validate_email "abdul@example.com"
 ```
 
 💡 **Best Practice**: Use `local` variables inside functions to avoid conflicts
