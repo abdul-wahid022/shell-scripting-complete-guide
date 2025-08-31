@@ -44,7 +44,7 @@
 ## 🎯 Scope and Objectives
 
 ### What You Can Automate:
-- **System Adminiation** 🖥️
+- **System Administration** 🖥️
   - User management and permissions
   - System monitoring and alerts
   - Automated backups and recovery
@@ -54,7 +54,7 @@
   - Directory organization
   - File compression and archiving
   
-- **Development Woflows** 👨‍💻
+- **Development Workflows** 👨‍💻
   - Build and deployment automation
   - Testing frameworks
   - Environment setup
@@ -223,7 +223,7 @@ fi
 
 ## 🔄 Loops
 
-Loops help you repeat tasks eiciently - perfect for processing multiple files or items!
+Loops help you repeat tasks efficiently - perfect for processing multiple files or items!
 
 ### For Loops:
 ```bash
@@ -324,7 +324,8 @@ set -euo pipefail
 # Error handling function
 handle_error() {
     echo "❌ Error occurred in script at line $1"
-    echo "Please check your input and try again."  exit 1
+    echo "Please check your input and try again."
+    exit 1
 }
 
 # Trap errors and call our handler
@@ -464,7 +465,7 @@ manage_service() {
     local service=$1
     local action=$2
     
-    case $action i
+    case $action in
         "start"|"stop"|"restart"|"status")
             sudo systemctl $action $service
             echo "✅ Service $service $action completed"
@@ -683,7 +684,7 @@ run_backup() {
 
 See how shell scripting solves real business problems!
 
-### 1. Automated Deploymnt Script:
+### 1. Automated Deployment Script:
 ```bash
 #!/bin/bash
 
@@ -699,7 +700,7 @@ deploy_application() {
     # Create backup of current version
     if [ -d "$DEPLOY_DIR" ]; then
         echo "📦 Creating backup..."
-        sudo tar -czf "$BACKUP_DIR/backup_ate +%Y%m%d_%H%M%S).tar.gz" -C "$DEPLOY_DIR" .
+        sudo tar -czf "$BACKUP_DIR/backup_$(date +%Y%m%d_%H%M%S).tar.gz" -C "$DEPLOY_DIR" .
     fi
     
     # Pull latest code
@@ -713,7 +714,7 @@ deploy_application() {
     
     # Run tests
     echo "🧪 Running tests..."
-    n test || {
+    npm test || {
         echo "❌ Tests failed! Rolling back..."
         # Rollback logic here
         exit 1
@@ -739,7 +740,7 @@ ALERT_EMAIL="admin@company.com"
 LOG_FILE="/var/log/system_monitor.log"
 
 # Thresholds
-CPU_RESHOLD=80
+CPU_THRESHOLD=80
 MEMORY_THRESHOLD=85
 DISK_THRESHOLD=90
 
@@ -792,7 +793,7 @@ echo "✅ Health check completed at $(date)"
 #!/bin/bash
 
 # Enterprise backup solution
-BACKP_SOURCES=("/home" "/etc" "/var/www" "/opt")
+BACKUP_SOURCES=("/home" "/etc" "/var/www" "/opt")
 BACKUP_DEST="/backup"
 RETENTION_DAYS=30
 COMPRESSION_LEVEL=6
@@ -810,7 +811,7 @@ perform_backup() {
             
            echo "📁 Backing up $source..." | tee -a "$backup_log"
             
-            if tar -czf "$backup_path" --level=$COMPRESSION_LEVEL"$source" 2>>"$backup_log"; then
+            if tar -czf "$backup_path" tar -czf "$backup_path" -"$COMPRESSION_LEVEL" "$source" 2>>"$backup_log"; then
                 local size=$(du -h "$backup_path" | cut -f1)
                 echo "✅ Backup completed: $backup_name ($size)" | tee -a "$backup_log"
             else
@@ -842,7 +843,7 @@ Follow these guidelines to write professional, maintainable scripts:
 #!/bin/bash
 
 # =============================================================================
-# Script Name: professional_script.sh
+# Script NAME: professional_script.sh
 # Description: Template for professional shell scripts
 # Author: Your Name
 # Version: 1.0
@@ -1017,9 +1018,9 @@ main "$@"
 
 Congratulations! 🎉 You've now learned the fundamentals of shell scripting from basic concepts to advanced real-world applications. Shell scripting is a powerful skill that will save you countless hours and make you more effective in system administration, DevOps, and automation tasks.
 
-### 🚀 What You've Accompished:
+### 🚀 What You've Accomplished:
 - ✅ Mastered basic shell scripting syntax and concepts
-- ✅ Learned to handle user input and command-line auments
+- ✅ Learned to handle user input and command-line arguments
 - ✅ Implemented conditional logic and loops
 - ✅ Created reusable functions and error handling
 - ✅ Explored file processing and system administration tasks
@@ -1050,12 +1051,12 @@ Congratulations! 🎉 You've now learned the fundamentals of shell scripting fro
 - **Practice Repository**: Check out the [scripts/](./scripts/) folder for hands-on examples
 - **Real Projects**: Apply these concepts to actual work scenarios
 - **Code Reviews**: Share your scripts and get feedback from peers
-- **Documentation*: Always document your scripts for future refeence
+- **Documentation**: Always document your scripts for future reference
 
 ### 💡 Remember:
 > "The best script is the one that saves time and prevents errors. Start simple, iterate often, and always prioritize reliability over complexity."
 
-**Happy Scipting!** 🐚✨
+**Happy Scripting!** 🐚✨
 
 ---
 
@@ -1067,5 +1068,5 @@ Congratulations! 🎉 You've now learned the fundamentals of shell scripting fro
 - [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) - Comprehensive tutorial
 
 ### 🛠️ **Tools and Utilities**
-- [ShellCheck](https://www.shellcheck.net/) - Static analysis tool for shecripts
-- [Bash-it](https://github.com/Bash-it/bash-it) - Community Bash framew
+- [ShellCheck](https://www.shellcheck.net/) - Static analysis tool for shell scripts
+- [Bash-it](https://github.com/Bash-it/bash-it) - Community Bash framework
