@@ -64,7 +64,7 @@
   - Log analysis
   - Remote system management
 
-### Learning Oives:
+### Learning Outcomes:
 ✅ **Automate** repetitive tasks efficiently  
 ✅ **Reduce** human errors in operations  
 ✅ **Increase** productivity through scripting  
